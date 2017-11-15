@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="dqd-playerandclub:war">
+    <output-path>$PROJECT_DIR$/dqd-playerandclub/target</output-path>
+    <root id="archive" name="dqd-playerandclub.war">
+      <element id="artifact" artifact-name="dqd-playerandclub:war exploded" />
+    </root>
+  </artifact>
+</component>

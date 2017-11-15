@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/dqd.iml" filepath="$PROJECT_DIR$/dqd.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dqd-addnews/dqd-addnews.iml" filepath="$PROJECT_DIR$/dqd-addnews/dqd-addnews.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dqd-addnews-dao/dqd-addnews-dao.iml" filepath="$PROJECT_DIR$/dqd-addnews-dao/dqd-addnews-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dqd-addnews-service/dqd-addnews-service.iml" filepath="$PROJECT_DIR$/dqd-addnews-service/dqd-addnews-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dqd-logandreg/dqd-logandreg.iml" filepath="$PROJECT_DIR$/dqd-logandreg/dqd-logandreg.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dqd-logandreg-dao/dqd-logandreg-dao.iml" filepath="$PROJECT_DIR$/dqd-logandreg-dao/dqd-logandreg-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dqd-logandreg-service/dqd-logandreg-service.iml" filepath="$PROJECT_DIR$/dqd-logandreg-service/dqd-logandreg-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dqd-manager/dqd-manager.iml" filepath="$PROJECT_DIR$/dqd-manager/dqd-manager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dqd-manager-dao/dqd-manager-dao.iml" filepath="$PROJECT_DIR$/dqd-manager-dao/dqd-manager-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dqd-manager-service/dqd-manager-service.iml" filepath="$PROJECT_DIR$/dqd-manager-service/dqd-manager-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dqd-newsandshow/dqd-newsandshow.iml" filepath="$PROJECT_DIR$/dqd-newsandshow/dqd-newsandshow.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dqd-newsandshow-dao/dqd-newsandshow-dao.iml" filepath="$PROJECT_DIR$/dqd-newsandshow-dao/dqd-newsandshow-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dqd-newsandshow-service/dqd-newsandshow-service.iml" filepath="$PROJECT_DIR$/dqd-newsandshow-service/dqd-newsandshow-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dqd-playerandclub/dqd-playerandclub.iml" filepath="$PROJECT_DIR$/dqd-playerandclub/dqd-playerandclub.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dqd-playerandclub-dao/dqd-playerandclub-dao.iml" filepath="$PROJECT_DIR$/dqd-playerandclub-dao/dqd-playerandclub-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dqd-playerandclub-service/dqd-playerandclub-service.iml" filepath="$PROJECT_DIR$/dqd-playerandclub-service/dqd-playerandclub-service.iml" />
+    </modules>
+  </component>
+</project>
