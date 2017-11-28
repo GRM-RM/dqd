@@ -16,12 +16,13 @@
 	  <!-- mapper接口生成的位置 -->
     <javaClientGenerator targetPackage="com.dqd.three.dao" targetProject="src/main/java" type="XMLMAPPER" />
 	  <!-- 指定数据库表 -->
-    <table  tableName="club" domainObjectName="Club"></table>
+    <!--<table  tableName="club" domainObjectName="Club"></table>-->
     <table  tableName="comment" domainObjectName="Comment"></table>
-    <table  tableName="label" domainObjectName="Label"></table>
+    <!--<table  tableName="label" domainObjectName="Label"></table>
 	<table  tableName="news" domainObjectName="News"></table>
 	<table  tableName="player" domainObjectName="Player"></table>
 	<table  tableName="user" domainObjectName="User"></table>
+     <table  tableName="match" domainObjectName="Match"></table>-->
 
   </context>
 </generatorConfiguration>
