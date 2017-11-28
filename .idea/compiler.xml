@@ -15,6 +15,7 @@
         <module name="dqd-manager" />
         <module name="dqd-manager-dao" />
         <module name="dqd-manager-service" />
+        <module name="dqd-manager-service02" />
         <module name="dqd-newsandshow" />
         <module name="dqd-newsandshow-dao" />
         <module name="dqd-newsandshow-service" />
@@ -34,6 +35,7 @@
       <module name="dqd-manager" target="1.8" />
       <module name="dqd-manager-dao" target="1.8" />
       <module name="dqd-manager-service" target="1.8" />
+      <module name="dqd-manager-service02" target="1.8" />
       <module name="dqd-newsandshow" target="1.8" />
       <module name="dqd-newsandshow-dao" target="1.8" />
       <module name="dqd-newsandshow-service" target="1.8" />

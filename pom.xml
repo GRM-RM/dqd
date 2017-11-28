@@ -21,6 +21,7 @@
         <module>dqd-addnews</module>
         <module>dqd-addnews-dao</module>
         <module>dqd-addnews-service</module>
+        <module>dqd-manager-service02</module>
     </modules>
     <packaging>pom</packaging>
 
