@@ -12,6 +12,7 @@
       <module fileurl="file://$PROJECT_DIR$/dqd-manager/dqd-manager.iml" filepath="$PROJECT_DIR$/dqd-manager/dqd-manager.iml" />
       <module fileurl="file://$PROJECT_DIR$/dqd-manager-dao/dqd-manager-dao.iml" filepath="$PROJECT_DIR$/dqd-manager-dao/dqd-manager-dao.iml" />
       <module fileurl="file://$PROJECT_DIR$/dqd-manager-service/dqd-manager-service.iml" filepath="$PROJECT_DIR$/dqd-manager-service/dqd-manager-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dqd-manager-service02/dqd-manager-service02.iml" filepath="$PROJECT_DIR$/dqd-manager-service02/dqd-manager-service02.iml" />
       <module fileurl="file://$PROJECT_DIR$/dqd-newsandshow/dqd-newsandshow.iml" filepath="$PROJECT_DIR$/dqd-newsandshow/dqd-newsandshow.iml" />
       <module fileurl="file://$PROJECT_DIR$/dqd-newsandshow-dao/dqd-newsandshow-dao.iml" filepath="$PROJECT_DIR$/dqd-newsandshow-dao/dqd-newsandshow-dao.iml" />
       <module fileurl="file://$PROJECT_DIR$/dqd-newsandshow-service/dqd-newsandshow-service.iml" filepath="$PROJECT_DIR$/dqd-newsandshow-service/dqd-newsandshow-service.iml" />

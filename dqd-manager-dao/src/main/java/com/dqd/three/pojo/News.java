@@ -13,6 +13,8 @@ public class News {
 
     private String content;
 
+    private String summary;
+
     private Date createTime;
 
     private String country;
@@ -21,7 +23,7 @@ public class News {
 
     private Integer userId;
 
-    private byte[] summary;
+    private Integer labelId;
 
     public Integer getId() {
         return id;
@@ -63,6 +65,14 @@ public class News {
         this.content = content;
     }
 
+    public String getSummary() {
+        return summary;
+    }
+
+    public void setSummary(String summary) {
+        this.summary = summary;
+    }
+
     public Date getCreateTime() {
         return createTime;
     }
@@ -95,11 +105,11 @@ public class News {
         this.userId = userId;
     }
 
-    public byte[] getSummary() {
-        return summary;
+    public Integer getLabelId() {
+        return labelId;
     }
 
-    public void setSummary(byte[] summary) {
-        this.summary = summary;
+    public void setLabelId(Integer labelId) {
+        this.labelId = labelId;
     }
 }

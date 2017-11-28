@@ -13,6 +13,16 @@ public class Player {
 
     private String avatar;
 
+    private String clubName;
+
+    public String getClubName() {
+        return clubName;
+    }
+
+    public void setClubName(String clubName) {
+        this.clubName = clubName;
+    }
+
     public Integer getId() {
         return id;
     }
