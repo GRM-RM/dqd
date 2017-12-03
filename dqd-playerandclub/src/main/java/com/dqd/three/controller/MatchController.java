@@ -1,7 +1,9 @@
 package com.dqd.three.controller;
 
+import com.dqd.three.dubbo.service.RedisService;
 import com.dqd.three.pojo.Match;
 import com.dqd.three.service.MatchService;
+import com.dqd.three.utils.JsonUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,15 +26,28 @@ public class MatchController {
     @Autowired
     private MatchService matchService;
 
+    @Autowired
+    private RedisService redisService;
+
     @RequestMapping("/list")
     public ModelAndView list(@RequestParam(required = false,defaultValue = "中超") String country,@RequestParam(required = false,defaultValue = "0")Integer round){
         ModelAndView modelAndView=new ModelAndView();
+        String result = redisService.get(country + "_" + round);
+
         List<Match> matches;
-        if(round==0){
-             matches= matchService.findByCountry(country);
+        if(result!=null){
+            matches=JsonUtils.jsonToList(result,Match.class);
         }else {
-            matches=matchService.findByRound(country,round);
+            if(round==0){
+                matches= matchService.findByCountry(country);
+            }else {
+                matches=matchService.findByRound(country,round);
+            }
+
+            String json = JsonUtils.objectToJson(matches);
+            redisService.set(country+"_"+round,json);
         }
+
         modelAndView.addObject("matches",matches);
         modelAndView.addObject("country",country);
         try {

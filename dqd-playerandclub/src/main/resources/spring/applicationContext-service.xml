@@ -44,4 +44,20 @@
         <aop:advisor advice-ref="txAdvice" pointcut-ref="myPoint"/>
     </aop:config>
 
+    <bean id="redisService" class="com.dqd.three.dubbo.service.impl.RedisServiceImpl">
+
+    </bean>
+
+    <bean id="jedisPool" class="redis.clients.jedis.JedisPool">
+        <constructor-arg name="host" value="10.0.127.232"></constructor-arg>
+        <constructor-arg name="port" value="6379"></constructor-arg>
+        <constructor-arg name="poolConfig" ref="poolConfig"></constructor-arg>
+    </bean>
+
+    <bean id="poolConfig" class="redis.clients.jedis.JedisPoolConfig">
+        <property name="maxTotal" value="30"></property>
+        <property name="minIdle" value="10"></property>
+        <property name="maxWaitMillis" value="1000"></property>
+    </bean>
+
 </beans>

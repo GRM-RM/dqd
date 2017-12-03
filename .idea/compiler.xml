@@ -22,6 +22,7 @@
         <module name="dqd-playerandclub" />
         <module name="dqd-playerandclub-dao" />
         <module name="dqd-playerandclub-service" />
+        <module name="dqd-redis" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
@@ -42,6 +43,7 @@
       <module name="dqd-playerandclub" target="1.8" />
       <module name="dqd-playerandclub-dao" target="1.8" />
       <module name="dqd-playerandclub-service" target="1.8" />
+      <module name="dqd-redis" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

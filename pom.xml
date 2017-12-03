@@ -22,6 +22,7 @@
         <module>dqd-addnews-dao</module>
         <module>dqd-addnews-service</module>
         <module>dqd-manager-service02</module>
+        <module>dqd-redis</module>
     </modules>
     <packaging>pom</packaging>
 
