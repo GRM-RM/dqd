@@ -1,5 +1,6 @@
 package com.dqd.three.controller;
 
+import com.dqd.dubbo.service.DubboRedisService;
 import com.dqd.three.dubbo.service.RedisService;
 import com.dqd.three.pojo.Match;
 import com.dqd.three.service.MatchService;
@@ -29,10 +30,13 @@ public class MatchController {
     @Autowired
     private RedisService redisService;
 
+    @Autowired
+    private DubboRedisService dubboRedisService;
+
     @RequestMapping("/list")
     public ModelAndView list(@RequestParam(required = false,defaultValue = "中超") String country,@RequestParam(required = false,defaultValue = "0")Integer round){
         ModelAndView modelAndView=new ModelAndView();
-        String result = redisService.get(country + "_" + round);
+        String result = dubboRedisService.get(country + "_" + round);
 
         List<Match> matches;
         if(result!=null){
@@ -45,7 +49,7 @@ public class MatchController {
             }
 
             String json = JsonUtils.objectToJson(matches);
-            redisService.set(country+"_"+round,json);
+            dubboRedisService.set(country+"_"+round,json);
         }
 
         modelAndView.addObject("matches",matches);

@@ -9,6 +9,7 @@
         <module name="dqd-addnews" />
         <module name="dqd-addnews-dao" />
         <module name="dqd-addnews-service" />
+        <module name="dqd-dubbo-server" />
         <module name="dqd-logandreg" />
         <module name="dqd-logandreg-dao" />
         <module name="dqd-logandreg-service" />
@@ -16,6 +17,7 @@
         <module name="dqd-manager-dao" />
         <module name="dqd-manager-service" />
         <module name="dqd-manager-service02" />
+        <module name="dqd-message" />
         <module name="dqd-newsandshow" />
         <module name="dqd-newsandshow-dao" />
         <module name="dqd-newsandshow-service" />
@@ -30,6 +32,7 @@
       <module name="dqd-addnews" target="1.8" />
       <module name="dqd-addnews-dao" target="1.8" />
       <module name="dqd-addnews-service" target="1.8" />
+      <module name="dqd-dubbo-server" target="1.8" />
       <module name="dqd-logandreg" target="1.8" />
       <module name="dqd-logandreg-dao" target="1.8" />
       <module name="dqd-logandreg-service" target="1.8" />
@@ -37,6 +40,7 @@
       <module name="dqd-manager-dao" target="1.8" />
       <module name="dqd-manager-service" target="1.8" />
       <module name="dqd-manager-service02" target="1.8" />
+      <module name="dqd-message" target="1.8" />
       <module name="dqd-newsandshow" target="1.8" />
       <module name="dqd-newsandshow-dao" target="1.8" />
       <module name="dqd-newsandshow-service" target="1.8" />

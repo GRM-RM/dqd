@@ -5,6 +5,7 @@
     <file url="file://$PROJECT_DIR$/dqd-addnews" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/dqd-addnews-dao" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/dqd-addnews-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/dqd-dubbo-server" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/dqd-logandreg" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/dqd-logandreg-dao" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/dqd-logandreg-service" charset="UTF-8" />
@@ -12,6 +13,7 @@
     <file url="file://$PROJECT_DIR$/dqd-manager-dao" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/dqd-manager-service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/dqd-manager-service02" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/dqd-message" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/dqd-newsandshow" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/dqd-newsandshow-dao" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/dqd-newsandshow-service" charset="UTF-8" />

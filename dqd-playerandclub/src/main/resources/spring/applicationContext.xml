@@ -18,6 +18,7 @@
 
 
     <import resource="applicationContext-service.xml"></import>
+    <import resource="applicationContext-dubbo.xml"></import>
 
     <!--开启注解-->
     <mvc:annotation-driven></mvc:annotation-driven>

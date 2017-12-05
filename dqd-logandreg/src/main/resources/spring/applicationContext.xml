@@ -45,5 +45,27 @@
         <property name="defaultEncoding" value="UTF-8"/>
         <property name="resolveLazily" value="true"/>
     </bean>
+    <!--消息连接工厂，真正产生的工厂-->
+    <bean id="activeMQConnectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
+        <property name="brokerURL" value="tcp://10.0.127.232:61616"></property>
+    </bean>
 
+    <!--spring管理创建的工厂-->
+    <bean id="singleConnectionFactory" class="org.springframework.jms.connection.SingleConnectionFactory">
+        <property name="targetConnectionFactory" ref="activeMQConnectionFactory"></property>
+    </bean>
+
+    <!--消息队列对应的topic队列的bean-->
+    <bean id="activeMQTopic" class="org.apache.activemq.command.ActiveMQTopic">
+        <constructor-arg name="name" value="dqd"></constructor-arg>
+    </bean>
+
+    <!--java message server java消息服务 bean-->
+    <bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+        <property name="connectionFactory" ref="singleConnectionFactory"></property>
+    </bean>
+
+    <bean id="sendMessage" class="com.dqd.three.util.SendMessage">
+
+    </bean>
 </beans>

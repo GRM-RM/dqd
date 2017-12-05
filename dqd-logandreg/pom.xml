@@ -11,6 +11,12 @@
     <name>dqd-logandreg Maven Webapp</name>
     <url>http://maven.apache.org</url>
     <dependencies>
+
+        <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>activemq-all</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>com.dqd.three</groupId>
             <artifactId>dqd-logandreg-service</artifactId>

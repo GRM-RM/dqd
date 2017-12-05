@@ -1,5 +1,6 @@
 package com.dqd.three.controller;
 
+import com.dqd.dubbo.service.DubboRedisService;
 import com.dqd.three.dubbo.service.RedisService;
 import com.dqd.three.pojo.Player;
 import com.dqd.three.service.PlayerService;
@@ -26,17 +27,20 @@ public class PlayerController {
     @Autowired
     private RedisService redisService;
 
+    @Autowired
+    private DubboRedisService dubboRedisService;
+
     @RequestMapping("/list")
     public ModelAndView showPlay(String country, @RequestParam(required = false, defaultValue = "1") Integer pageIndex,
                                  @RequestParam(required = false, defaultValue = "10") Integer pageSize, Integer mark) {
         PageInfo<Player> page;
-        String result = redisService.get(country + "_" + pageIndex + "_" + pageSize+"_"+mark);
+        String result = dubboRedisService.get(country + "_" + pageIndex + "_" + pageSize+"_"+mark);
         if (result != null) {
             page = JsonUtils.jsonToPojo(result, PageInfo.class);
         }else {
             page = playerService.findPlayers(country, pageIndex, pageSize, mark);
             String json = JsonUtils.objectToJson(page);
-            redisService.set(country + "_" + pageIndex + "_" + pageSize+"_"+mark, json);
+            dubboRedisService.set(country + "_" + pageIndex + "_" + pageSize+"_"+mark, json);
         }
 
         ModelAndView modelAndView = new ModelAndView();

@@ -5,7 +5,11 @@ import com.dqd.three.service.RedisService;
 import com.dqd.three.service.UserService;
 import com.dqd.three.util.Constants;
 import com.dqd.three.util.FastDFSClient;
+import com.dqd.three.util.SendMessage;
+import org.apache.activemq.command.ActiveMQTopic;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jms.core.JmsTemplate;
+import org.springframework.jms.core.MessageCreator;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
@@ -15,9 +19,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.jms.JMSException;
+import javax.jms.Message;
+import javax.jms.Session;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -30,6 +38,9 @@ public class UserController {
     private UserService userService;
     @Autowired
     private RedisService redisService;
+
+    @Autowired
+    private SendMessage sendMessage;
 
     @RequestMapping("/")
     public String goreg(){
@@ -103,6 +114,7 @@ public class UserController {
                 modelAndView.setViewName("index");
                 //登录成功将用户放入session中
                 session.setAttribute(Constants.USER_SESSION,user);
+                sendMessage.loginMsg(username);
             }
             //手机验证码登录
             if(userTel!=null&&userTel.trim().length()!=0&&LoginCheckCode!=null&&LoginCheckCode.trim().length()!=0){
@@ -114,6 +126,7 @@ public class UserController {
                     session.setAttribute(Constants.USER_SESSION,user);
                     //验证成功则删除redis中的记录
                     redisService.del(s);
+                    sendMessage.loginMsg(username);
                 }else{
                     modelAndView.setViewName("login");
                     modelAndView.addObject("error","验证码错误");

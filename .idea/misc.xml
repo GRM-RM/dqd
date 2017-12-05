@@ -2,8 +2,10 @@
 <project version="4">
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/dqd-addnews" />
+    <file type="web" url="file://$PROJECT_DIR$/dqd-dubbo-server" />
     <file type="web" url="file://$PROJECT_DIR$/dqd-logandreg" />
     <file type="web" url="file://$PROJECT_DIR$/dqd-manager" />
+    <file type="web" url="file://$PROJECT_DIR$/dqd-message" />
     <file type="web" url="file://$PROJECT_DIR$/dqd-newsandshow" />
     <file type="web" url="file://$PROJECT_DIR$/dqd-playerandclub" />
   </component>

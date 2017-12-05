@@ -1,5 +1,6 @@
 package com.dqd.three.controller;
 
+import com.dqd.dubbo.service.DubboRedisService;
 import com.dqd.three.dubbo.service.RedisService;
 import com.dqd.three.pojo.Club;
 import com.dqd.three.service.ClubService;
@@ -29,18 +30,21 @@ public class ClubController {
     @Autowired
     private RedisService redisService;
 
+    @Autowired
+    private DubboRedisService dubboRedisService;
+
     @RequestMapping("/list")
     @ResponseBody
     public ModelAndView showClub(@RequestParam(required = false, defaultValue = "中超") String country) {
         List<Club> list;
         ModelAndView modelAndView = new ModelAndView();
-        String result = redisService.get("club:" + country);
+        String result = dubboRedisService.get("club:" + country);
         if (result != null) {
             list = JsonUtils.jsonToList(result, Club.class);
         } else {
             list = clubService.findByCountry(country);
             String s = JsonUtils.objectToJson(list);
-            redisService.set("club:" + country, s);
+            dubboRedisService.set("club:" + country, s);
         }
 
         modelAndView.addObject("list", list);

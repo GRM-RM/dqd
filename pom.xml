@@ -23,6 +23,8 @@
         <module>dqd-addnews-service</module>
         <module>dqd-manager-service02</module>
         <module>dqd-redis</module>
+        <module>dqd-dubbo-server</module>
+        <module>dqd-message</module>
     </modules>
     <packaging>pom</packaging>
 

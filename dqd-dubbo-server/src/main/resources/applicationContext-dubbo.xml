@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/context   
+        http://www.springframework.org/schema/context/spring-context.xsd   
+        http://www.springframework.org/schema/mvc   
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://code.alibabatech.com/schema/dubbo 
+        http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <!--dubboredisservice创建bean-->
+    <bean id="dubboRedisService" class="com.dqd.dubbo.service.DubboRedisServiceImpl">
+        <property name="jedisPool" ref="jedisPool"></property>
+    </bean>
+
+    <!--设置jedispool配置包括主机地址，端口号-->
+    <bean id="jedisPool" class="redis.clients.jedis.JedisPool">
+        <constructor-arg name="poolConfig" ref="poolConfig"></constructor-arg>
+        <constructor-arg name="host" value="10.0.127.232"></constructor-arg>
+        <constructor-arg name="port" value="6379"></constructor-arg>
+    </bean>
+
+    <!--jedispoolconfig的一些配置包括最大数，最小数，最大等待时间-->
+    <bean id="poolConfig" class="redis.clients.jedis.JedisPoolConfig">
+        <property name="maxTotal" value="30"></property>
+        <property name="minIdle" value="10"></property>
+        <property name="maxWaitMillis" value="1000"></property>
+    </bean>
+
+    <!--注册dubbo服务-->
+    <dubbo:application name="dqd-dubbo-server"></dubbo:application>
+    <dubbo:registry protocol="zookeeper" address="10.0.127.232:2181"></dubbo:registry>
+    <dubbo:protocol name="dubbo" port="20881"></dubbo:protocol>
+    <dubbo:service interface="com.dqd.dubbo.service.DubboRedisService" ref="dubboRedisService"></dubbo:service>
+</beans>
