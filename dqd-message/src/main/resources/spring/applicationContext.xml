@@ -4,7 +4,7 @@
        xmlns:aop="http://www.springframework.org/schema/aop"
        xmlns:tx="http://www.springframework.org/schema/tx"
        xmlns:context="http://www.springframework.org/schema/context"
-       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:mongo="http://code.alibabatech.com/schema/dubbo"
        xsi:schemaLocation="http://www.springframework.org/schema/beans 
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/aop
@@ -14,8 +14,10 @@
         http://www.springframework.org/schema/context   
         http://www.springframework.org/schema/context/spring-context.xsd   
         http://www.springframework.org/schema/mvc   
-        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
+    <import resource="applicationContext-service.xml"></import>
+    <import resource="applicationContext-task.xml"></import>
     <!--开启注解-->
     <mvc:annotation-driven></mvc:annotation-driven>
 
@@ -37,6 +39,17 @@
         <constructor-arg name="name" value="dqd"></constructor-arg>
     </bean>
 
+    <bean id="topicConsumeListener" class="com.dqd.three.service.TopicConsumeListener">
 
+    </bean>
 
+    <bean class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+        <property name="connectionFactory" ref="activeMQConnectionFactory"></property>
+        <property name="messageListener" ref="topicConsumeListener"></property>
+        <property name="destination" ref="activeMQTopic"></property>
+    </bean>
+
+    <mongo:application name="dqd-message"></mongo:application>
+    <mongo:registry protocol="zookeeper" address="10.0.127.232:2181"></mongo:registry>
+    <mongo:reference interface="com.dqd.dubbo.service.DubboRedisService" id="dubboRedisService"></mongo:reference>
 </beans>

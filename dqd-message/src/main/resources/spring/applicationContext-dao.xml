@@ -5,6 +5,7 @@
        xmlns:tx="http://www.springframework.org/schema/tx"
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:mongo="http://www.springframework.org/schema/data/mongo"
        xsi:schemaLocation="http://www.springframework.org/schema/beans 
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/aop
@@ -14,9 +15,19 @@
         http://www.springframework.org/schema/context   
         http://www.springframework.org/schema/context/spring-context.xsd   
         http://www.springframework.org/schema/mvc   
-        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/data/mongo http://www.springframework.org/schema/data/mongo/spring-mongo.xsd">
 
+    <mongo:db-factory id="mongoDbFactory" dbname="dqd" host="10.0.127.232" port="27017"></mongo:db-factory>
 
+    <bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
+        <constructor-arg name="mongoDbFactory" ref="mongoDbFactory"></constructor-arg>
+    </bean>
 
+    <mongo:mapping-converter base-package="com.dqd.three.pojo"></mongo:mapping-converter>
+    <context:component-scan base-package="com.dqd.three.pojo"></context:component-scan>
+
+    <bean id="topicPojoDao" class="com.dqd.three.dao.impl.TopicPojoDaoImpl">
+        <property name="mongoTemplate" ref="mongoTemplate"></property>
+    </bean>
 
 </beans>

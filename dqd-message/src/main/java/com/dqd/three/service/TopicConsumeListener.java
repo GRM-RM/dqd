@@ -25,7 +25,7 @@ public class TopicConsumeListener implements MessageListener {
         try {
             String text = textMessage.getText();
             //String username = text.substring(text.indexOf(":") + 1, text.indexOf("在"));
-            dubboRedisService.set("login",text);
+            dubboRedisService.lpush("login",text);
         } catch (JMSException e) {
             e.printStackTrace();
         }

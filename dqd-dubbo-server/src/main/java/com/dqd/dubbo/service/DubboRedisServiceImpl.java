@@ -28,4 +28,22 @@ public class DubboRedisServiceImpl implements DubboRedisService {
         jedis.set(key,value);
     }
 
+    @Override
+    public void lpush(String key,String value){
+        Jedis jedis = jedisPool.getResource();
+        jedis.lpush(key,value);
+    }
+
+    @Override
+    public String rpop(String key) {
+        Jedis jedis = jedisPool.getResource();
+        return jedis.rpop(key);
+    }
+
+    @Override
+    public Long getLlen(String key) {
+        Jedis jedis = jedisPool.getResource();
+        return jedis.llen(key);
+    }
+
 }

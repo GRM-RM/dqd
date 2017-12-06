@@ -11,4 +11,12 @@ public interface DubboRedisService {
 
     void set(String key,String value);
 
+    void lpush(String key,String value);
+
+    String rpop(String key);
+
+    Long getLlen(String key);
+
+
+
 }

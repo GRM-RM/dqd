@@ -16,14 +16,28 @@
         http://www.springframework.org/schema/mvc   
         http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-    <!--开启注解-->
-    <mvc:annotation-driven></mvc:annotation-driven>
+    <!--任务对象-->
+    <bean id="topicStatusTask" class="com.dqd.three.task.TopicPojoTask">
 
-    <!--视图解析器-->
-    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix" value="/WEB-INF/jsp/"/>
-        <property name="suffix" value=".jsp"/>
+    </bean>
+    <!--任务工厂关联-->
+    <bean id="jobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="topicStatusTask"></property>
+        <property name="targetMethod" value="countTopic"></property>
+        <property name="concurrent" value="false"></property>
+    </bean>
+    <!--触发器-->
+    <bean id="cronTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="jobDetail" ref="jobDetail"></property>
+        <property name="cronExpression" value="0 0 0 1/1 * ?"></property>
     </bean>
 
+    <bean id="scheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="triggers">
+            <list>
+                <ref bean="cronTrigger"></ref>
+            </list>
+        </property>
+    </bean>
 
 </beans>
