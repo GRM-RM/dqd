@@ -5,6 +5,9 @@ import com.dqd.three.pojo.UserExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
+/**
+ * @author grm
+ */
 public interface UserMapper {
     int countByExample(UserExample example);
 

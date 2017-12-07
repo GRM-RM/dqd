@@ -2,7 +2,7 @@ package com.dqd.three;
 
 /**
  * Hello world!
- *
+ *@author grm
  */
 public class App 
 {

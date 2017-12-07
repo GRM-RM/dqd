@@ -10,6 +10,7 @@
           <element id="archive" name="dqd-newsandshow-service-1.0.jar">
             <element id="module-output" name="dqd-newsandshow-service" />
           </element>
+          <element id="library" level="project" name="Maven: org.json:json:20160807" />
           <element id="archive" name="dqd-newsandshow-dao-1.0.jar">
             <element id="module-output" name="dqd-newsandshow-dao" />
           </element>

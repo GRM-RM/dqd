@@ -7,6 +7,9 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 import java.util.Date;
 
+/**
+ * @author grm
+ */
 public class User {
     private Integer id;
 

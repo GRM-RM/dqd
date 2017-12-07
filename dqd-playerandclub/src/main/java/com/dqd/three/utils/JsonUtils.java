@@ -4,7 +4,9 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 淘淘商城自定义响应结构

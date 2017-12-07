@@ -7,7 +7,7 @@ import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
- * 淘淘商城自定义响应结构
+ * json转化
  */
 public class JsonUtils {
 

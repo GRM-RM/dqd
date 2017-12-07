@@ -1,5 +1,7 @@
 package com.dqd.three.pojo;
-
+/**
+ * @author grm
+ */
 public class Club {
     private Integer id;
 
